@@ -6,8 +6,10 @@ Individual fields are seperate components, passing states to child components or
 
 Validations are done on seperate functions.
 
-The form is not submit-able.
-
+Note:
+- All fields except Mobile number must be filled.
+- Password Strength facility not present.
+- The form is not submit-able.
 
 #### Technologies Used
 - Javascript
