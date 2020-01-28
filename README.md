@@ -1,6 +1,26 @@
+### ReactForm:notebook:
+#### About
+This clean static form is performing javascript validations on input for checking values on frontend during a Signup. 
+
+Individual fields are seperate components, passing states to child components or functions.
+
+Validations are done on seperate functions.
+
+The form is not submit-able.
+
+
+#### Technologies Used
+- Javascript
+- HTML5
+- CSS3
+
+
+### Other
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
