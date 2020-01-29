@@ -27,7 +27,7 @@ const Confirm = ({ value }) => {
         <div>
             <label>Confirm Password</label>
             <input
-                type="text"
+                type="password"
                 placeholder="Confirm Password"
                 style={style}
                 onBlur={isEmpty}

@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+body{
+
+  background: url("./Desktop.png");
+  background-size: cover;
+
+}
+
 #root {
   animation: fadeIn 0.5s ease-in-out;
   text-align: center;
@@ -35,7 +42,7 @@ form {
   transition: 0.2s ease-in-out;
 }
 span {
-  color: rgb(199, 199, 199);
+  color: rgb(201, 201, 201);
   font-size: small;
   display: flex;
   margin: 10px 0;
@@ -90,4 +97,20 @@ a {
   text-decoration: none;
   color: #2196f3;
   font-size: small;
+}
+a:hover{
+  color: white;
+  font-weight: 900;
+}
+
+
+@media(min-width: 100px) and (max-width: 500px){
+
+  body{
+
+    background: url("./Desktop.png");
+    background-size: cover;
+    background-position: right;
+  }
+
 }

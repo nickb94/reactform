@@ -30,7 +30,7 @@ const Password = () => {
         <div>
             <label>Password</label>
             <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 style={style}
                 onBlur={isEmpty}
