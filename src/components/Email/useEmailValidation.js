@@ -1,4 +1,10 @@
+import { Mycontext } from "../Context/Context"
+import React from "react";
+
 const useEmailValidation = (value) => {
+
+    const { evalue } = React.useContext(Mycontext);
+    const [, setemailContext] = evalue;
 
     const checkEmail = () => {
 
@@ -19,6 +25,7 @@ const useEmailValidation = (value) => {
             document.getElementById("emailerror").innerHTML = "Avoid special characters";
             const u = document.getElementById("emails");
             u.classList.add("warn-active")
+            setemailContext("");
             return false;
         }
 
@@ -50,7 +57,8 @@ const useEmailValidation = (value) => {
         if (flagbeat) {
             document.getElementById("emailerror").innerHTML = "Avoid special characters";
             const u = document.getElementById("emails");
-            u.classList.add("warn-active")
+            u.classList.add("warn-active");
+            setemailContext("");
             return false;
         }
 
@@ -59,6 +67,7 @@ const useEmailValidation = (value) => {
 
             document.getElementById("emailerror").innerHTML = "Incorrect Email Address.";
             document.getElementById("emails").classList.add("warn-active");
+            setemailContext("");
             return false;
 
         }
@@ -69,24 +78,28 @@ const useEmailValidation = (value) => {
             if (value[i] !== "@" && value[i - 1] === "" && value[i + 1] === "") {
                 document.getElementById("emailerror").innerHTML = "Invalid email address.";
                 document.getElementById("emails").classList.add("warn-active");
+                setemailContext("");
                 return false;
             }
             //"." before after "@"
             if ((value[i] === "@" && value[i + 1] === ".") || (value[i] === "@" && value[i - 1] === ".")) {
                 document.getElementById("emailerror").innerHTML = "Check positions of '@' and '.'";
                 document.getElementById("emails").classList.add("warn-active");
+                setemailContext("");
                 return false;
             }
             //multiple dots together
             if ((value[i] === "." && value[i + 1] === ".")) {
                 document.getElementById("emailerror").innerHTML = "Multiple dots together not allowed";
                 document.getElementById("emails").classList.add("warn-active");
+                setemailContext("");
                 return false;
             }
 
             if ((value[0] === "@") || (value[0] === ".")) {
                 document.getElementById("emailerror").innerHTML = "Check '@' and '.' position.";
                 document.getElementById("emails").classList.add("warn-active");
+                setemailContext("");
                 return false;
             }
             //no dots in last
@@ -94,6 +107,7 @@ const useEmailValidation = (value) => {
                 if (value[i] === ".") {
                     document.getElementById("emailerror").innerHTML = "Check characters after '.'";
                     document.getElementById("emails").classList.add("warn-active");
+                    setemailContext("");
                     return false;
                 }
         }
@@ -113,6 +127,7 @@ const useEmailValidation = (value) => {
         if (flagbe) {
             document.getElementById("emailerror").innerHTML = "No space allowed before '@'.";
             document.getElementById("emails").classList.add("warn-active");
+            setemailContext("");
             return false;
         }
         //no space after "@"//////////////////
@@ -130,6 +145,7 @@ const useEmailValidation = (value) => {
         if (flagaf) {
             document.getElementById("emailerror").innerHTML = "No space allowed after '@'.";
             document.getElementById("emails").classList.add("warn-active");
+            setemailContext("");
             return false;
         }
 
@@ -148,6 +164,7 @@ const useEmailValidation = (value) => {
         if (flag) {
             document.getElementById("emailerror").innerHTML = "Single '@' allowed.";
             document.getElementById("emails").classList.add("warn-active");
+            setemailContext("");
             return false;
         }
 
@@ -168,6 +185,7 @@ const useEmailValidation = (value) => {
                 document.getElementById("emailerror").innerHTML = "Characters '@' and '.' expected.";
                 document.getElementById("emails").classList.add("warn-active");
                 flags = false;
+                setemailContext("");
                 return false;
             }
 
@@ -177,16 +195,20 @@ const useEmailValidation = (value) => {
         if (value.length < 6) {
             document.getElementById("emailerror").innerHTML = "Incorrect email address.";
             document.getElementById("emails").classList.add("warn-active");
+            setemailContext("");
             return false;
         }
         if (value.length > 6 && (value.charAt(value.length - 4) !== ".") && (value.charAt(value.length - 3) !== ".")) {
             document.getElementById("emailerror").innerHTML = "Check characters after '.'";
             document.getElementById("emails").classList.add("warn-active");
+            setemailContext("");
             return false;
         }
         else {
             document.getElementById("emailerror").innerHTML = "";
             document.getElementById("emails").classList.remove("warn-active");
+            setemailContext(value);
+
         }
     }
     if (value) {
@@ -195,4 +217,4 @@ const useEmailValidation = (value) => {
     return value;
 }
 
-export default useEmailValidation
+export default useEmailValidation;

@@ -1,41 +1,61 @@
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+@font-face {
+  font-family: "Inter-regular";
+  src: url(fonts/Inter-Regular.otf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter-black";
+  src: url(fonts/Inter-Black.otf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter-bold";
+  src: url(fonts/Inter-Bold.otf);
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
 
-body{
-
-  background: url("./Desktop.png");
+body {
+  background: url("./img/back.jpg");
   background-size: cover;
-
 }
 
 #root {
   animation: fadeIn 0.5s ease-in-out;
   text-align: center;
-  margin: 10px;
 }
 
 .screen {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px, 10fr));
+  margin: 0 auto;
 }
-.leftscreen {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 40px;
-  color: #2196f3;
-  text-decoration: underline;
+
+.rightscreen {
+  font-family: "Inter-black";
+  padding: 100px;
+  background: white;
+  text-align: start;
 }
 
 form {
   text-align: start;
+  margin-right: 100px;
+  font-family: "Inter-regular";
 }
 
 ::placeholder {
   opacity: 0.3;
+  font-family: "Inter-regular";
 }
 .warn-active {
   box-shadow: 0 0 0px 3px rgb(255, 163, 163);
@@ -48,6 +68,7 @@ span {
   margin: 10px 0;
 }
 input {
+  font-family: "Inter-regular";
   border: 1px solid #8080804a;
   height: 0px;
   width: 100%;
@@ -61,6 +82,7 @@ input {
 }
 
 button {
+  font-family: "Inter-bold";
   width: 100%;
   border: 2px solid #2196f3;
   height: 40px;
@@ -72,6 +94,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  margin-top: 20px;
 }
 
 button:hover {
@@ -93,24 +116,35 @@ button:hover {
   }
 }
 
-a {
+p > a {
   text-decoration: none;
   color: #2196f3;
   font-size: small;
+  transition: 0.2s ease;
+  filter: blur(0.8px);
 }
-a:hover{
-  color: white;
-  font-weight: 900;
+p > a:hover {
+  text-shadow: black;
+  filter: none;
 }
 
-
-@media(min-width: 100px) and (max-width: 500px){
-
-  body{
-
-    background: url("./Desktop.png");
+@media (min-width: 100px) and (max-width: 1150px) {
+  body {
+    background: url("./img/back.jpg");
     background-size: cover;
-    background-position: right;
+    background-repeat: no-repeat;
   }
 
+  .screen {
+    display: block;
+  }
+
+  form {
+    margin-right: 0px;
+  }
+
+  .rightscreen {
+    padding: 50px;
+    width: 90vw;
+  }
 }

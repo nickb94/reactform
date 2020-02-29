@@ -6,8 +6,13 @@ const Mobile = () => {
     const [value, setValue] = useState("");
     const [style, setStyle] = useState({});
 
-    const checkedValue = useNumberValidation(value)
+    const checkedValue = useNumberValidation(value);
+
     const isEmpty = () => {
+        if (checkedValue === "") {
+
+            document.getElementById("numbererror").textContent = "";
+        }
 
         setStyle({
             transition: "0.3s ease-in-out"
