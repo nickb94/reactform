@@ -1,24 +1,28 @@
 ### ReactForm:notebook:
 #### About
-This clean static form is performing javascript validations on input for checking values on frontend during a Signup. 
+
+This clean static registration form is performing javascript validations on input(frontend) during a Signup process. The form uses context API to manage states and authorize form submissions. 
 
 Individual fields are seperate components, passing states to child components or functions.
 
 Validations are done on seperate functions.
 
 Note:
-- All fields except Mobile number must be filled.
+- While registraion, Mobile number field not mandatory.
 - Password Strength facility not present.
-- The form is not submit-able.
+- The form submitted values can be seen in browser's console log.
 
 #### Technologies Used
+
+- React Context API
+- React Hooks
 - Javascript
 - HTML5
 - CSS3
 
 
-### Other
 
+### Other
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
