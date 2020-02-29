@@ -12,6 +12,7 @@ const Mobile = () => {
         if (checkedValue === "") {
 
             document.getElementById("numbererror").textContent = "";
+            document.getElementById("number").classList.remove("warn-active");
         }
 
         setStyle({
