@@ -8,7 +8,7 @@ Individual fields are seperate components, passing states to child components or
 Validations are done on seperate functions.
 
 Note:
-- While registraion, Mobile number field not mandatory.
+- While registration, Mobile number field not mandatory.
 - Password Strength facility not present.
 - The form submitted values can be seen in browser's console log.
 
