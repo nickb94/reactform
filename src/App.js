@@ -10,11 +10,10 @@ import "./App.css";
 const formValid = finalObj => {
   let valid = true;
   finalObj.forEach(val => {
-    val === "" ? valid = false : valid = true
+    (val === "" || val === null || val === undefined || val.length === 0) && (valid = false);
   });
   return valid
 }
-
 
 const App = () => {
 
@@ -43,7 +42,7 @@ const App = () => {
       console.log("Email :" + emailContext)
       console.log("Pass: " + passContext)
       console.log("Confirm Pass: " + conContext)
-      console.log("Mobile: "+ numberContext) 
+      console.log("Mobile: " + numberContext)
     } else {
       alert("Please fill complete form.");
     }
@@ -68,9 +67,7 @@ const App = () => {
           </form>
           <p><a target="__blank" rel="noopener noreferrer" href="https://github.com/nickb94">@nickb94</a></p>
         </div>
-
       </div>
-
     </>
   );
 }
